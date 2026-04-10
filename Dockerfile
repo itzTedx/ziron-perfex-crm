@@ -38,6 +38,16 @@ RUN a2enmod rewrite headers expires
 COPY docker/apache/perfex.conf /etc/apache2/sites-available/000-default.conf
 COPY docker/php/uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 
+# Snapshots for named volumes (empty volumes hide these paths in the image)
+COPY application/config /opt/perfex-volume-defaults/application/config
+COPY uploads /opt/perfex-volume-defaults/uploads
+COPY application/cache /opt/perfex-volume-defaults/application/cache
+COPY temp /opt/perfex-volume-defaults/temp
+COPY application/logs /opt/perfex-volume-defaults/application/logs
+
+COPY docker/entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 WORKDIR /var/www/html
 
 # Copy application files
@@ -53,3 +63,5 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/application/logs
 
 EXPOSE 80
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD []

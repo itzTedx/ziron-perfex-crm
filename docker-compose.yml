@@ -7,9 +7,11 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    environment:
+      # MySQL service hostname in this compose network (not localhost)
+      APP_DB_HOSTNAME: db
     volumes:
-      # Persist the config directory so app-config.php (created by /install wizard) survives restarts.
-      # On first run Docker copies image contents into the empty named volume automatically.
+      # Persist config; empty volumes hide image files — entrypoint seeds from /opt/perfex-volume-defaults on first start.
       - app_config:/var/www/html/application/config
       - app_uploads:/var/www/html/uploads
       - app_temp:/var/www/html/temp

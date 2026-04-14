@@ -38,12 +38,12 @@ define('APP_ENC_KEY', '2a5bb5bbe44f34d523ba7fa161bcd2f0');
  * Database Credentials
  * The hostname of your database server
  */
-define('APP_DB_HOSTNAME', 'localhost');
+define('APP_DB_HOSTNAME', 'db');
 
 /**
  * The username used to connect to the database
  */
-define('APP_DB_USERNAME', 'ziron');
+define('APP_DB_USERNAME', 'perfex');
 
 /**
  * The password used to connect to the database
@@ -53,7 +53,7 @@ define('APP_DB_PASSWORD', 'abyvhTrZE82Qmcae369y');
 /**
  * The name of the database you want to connect to
  */
-define('APP_DB_NAME', 'ziron-crm');
+define('APP_DB_NAME', 'perfex_crm');
 
 /**
  * @since  2.3.0

@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ziron-crm`
+-- Database: `perfex_crm`
 --
-CREATE DATABASE IF NOT EXISTS `ziron-crm` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `ziron-crm`;
+CREATE DATABASE IF NOT EXISTS `perfex_crm` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `perfex_crm`;
 
 -- --------------------------------------------------------
 
